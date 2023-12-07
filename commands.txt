@@ -1,0 +1,28 @@
+git add commands.txt
+git status
+git branch -M home_work_25
+git checkout home_work_25
+git commit -m "add commands.txt file"
+git rm --cached .idea/misc.xml
+git push -u origin home_work_25
+git add src/moneyReceiver/MoneyReceiver.java
+git add src/moneyReceiver/CoinAcceptor.java
+git add src/moneyReceiver/BankCardAcceptor.java
+git commit -m "described the CoinAcceptor class"
+git add src/exceptions/
+git commit -m "add CustomException class"
+git commit -m "implemented the initial class description"
+git commit -m "added ConsoleUtils file"
+git commit -m "added print and printSuccess methods"
+git commit -m "Implemented the addMoney method"
+git commit -m "addMoney revision"
+git commit -m "Implementation of the choice of replenishment method. Removed old CoinAcceptor"
+git commit -m "removed unused import"
+git commit -m "code cleaning and optimization"
+
+
+
+
+
+
+
