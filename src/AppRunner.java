@@ -7,12 +7,10 @@ import util.ConsoleUtils;
 import util.UniversalArray;
 import util.UniversalArrayImpl;
 
-import java.util.Scanner;
-
 public class AppRunner {
 
     private final UniversalArray<Product> products = new UniversalArrayImpl<>();
-    
+
     private static boolean isExit = false;
 
     private MoneyReceiver receiver;
