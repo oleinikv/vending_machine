@@ -36,9 +36,13 @@ public class BankCardAcceptor implements MoneyReceiver {
             ConsoleUtils.print("Баланс карты: " + cardBalance);
             int sum = ConsoleUtils.getInteger("Введите сумму пополнения: ");
             if (sum <= cardBalance) {
-                amount += sum;
-                cardBalance -= sum;
-                break;
+                if (cardBalance - sum < 0) {
+                    ConsoleUtils.printError("Недостаточно средств на балансе карты.");
+                } else {
+                    amount += sum;
+                    cardBalance -= sum;
+                    break;
+                }
             } else {
                 ConsoleUtils.printError("Недостаточно средств на балансе карты.");
             }
