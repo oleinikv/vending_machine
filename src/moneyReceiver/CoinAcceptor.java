@@ -1,6 +1,8 @@
 package moneyReceiver;
 
-public class CoinAcceptor implements MoneyReceiver{
+import util.ConsoleUtils;
+
+public class CoinAcceptor implements MoneyReceiver {
     private int amount;
 
     public CoinAcceptor(int amount) {
@@ -19,7 +21,7 @@ public class CoinAcceptor implements MoneyReceiver{
 
     @Override
     public void addMoney() {
-        amount+=10;
-        System.out.println("Вы пополнили баланс на 10");
+        amount += 10;
+        ConsoleUtils.printSuccess("Вы пополнили баланс на 10");
     }
 }

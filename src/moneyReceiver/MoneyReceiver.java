@@ -1,9 +1,9 @@
 package moneyReceiver;
 
 public interface MoneyReceiver {
-    public int getAmount();
+    int getAmount();
 
-    public void setAmount(int amount);
+    void setAmount(int amount);
 
-    public void addMoney();
+    void addMoney();
 }

@@ -8,9 +8,7 @@ public class ConsoleUtils {
     private static final String ANSI_RED = "\u001B[31m";
     private static final String ANSI_GREEN = "\u001B[32m";
 
-
-
-    public static String getString(String message){
+    public static String getString(String message) {
         System.out.print(message);
         String str = new Scanner(System.in).nextLine().trim();
         if (str.isBlank() || str.isEmpty()) {

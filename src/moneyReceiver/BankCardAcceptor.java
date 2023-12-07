@@ -7,7 +7,6 @@ public class BankCardAcceptor implements MoneyReceiver {
     private int amount;
     private int cardBalance;
 
-
     public BankCardAcceptor() {
         this(1200, 20);
     }
@@ -32,8 +31,8 @@ public class BankCardAcceptor implements MoneyReceiver {
 
         while (true) {
             String cardPAN = getCardPAN();
-            String oneTimePassword = getOneTimePassword();
-            ConsoleUtils.print("Баланс карты: " + cardBalance);
+            getOneTimePassword();
+            ConsoleUtils.print("Баланс карты (" + cardPAN + "): " + cardBalance);
             int sum = ConsoleUtils.getInteger("Введите сумму пополнения: ");
             if (sum <= cardBalance) {
                 if (cardBalance - sum < 0) {
@@ -51,7 +50,7 @@ public class BankCardAcceptor implements MoneyReceiver {
     }
 
     private String getOneTimePassword() {
-        String password = ConsoleUtils.getString("Введите одноразовый пароль: ");
+        String password = ConsoleUtils.getString("Введите одноразовый пароль (5 символов): ");
         try {
             if (password.length() != 5) {
                 throw new CustomException("Вы ввели не верный пароль. Повторите ввод");
@@ -70,9 +69,8 @@ public class BankCardAcceptor implements MoneyReceiver {
             if (PAN.length() != 16) {
                 throw new CustomException("Введен не верный номер карты. Повторите ввод");
             }
-            long iPAN = Long.parseLong(PAN);
-
-
+            Long.parseLong(PAN);
+            
         } catch (CustomException ce) {
             ConsoleUtils.printError(ce.getMessage());
             return getCardPAN();
